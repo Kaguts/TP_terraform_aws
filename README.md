@@ -13,8 +13,9 @@ Assurez-vous d'avoir configuré vos informations d'identification AWS avant d'ex
 ## Structure du Projet
 - `00_providers.tf`: Contient la configuration Terraform pour se connecter et échanger avec de provider AWS.
 - `01_resources.tf`: Contient la configuration Terraform pour déployer une VPC, un groupe de sécurité, un sous-réseau, et une instance EC2.
-- `variables.tfvar`: Définit les variables utilisées dans le fichier `01_resources.tf`.
+- `variables.tfvars`: Définit les variables utilisées dans le fichier `01_resources.tf`.
 - `variables.tf`: Définit les types de variables.
+- `outputs.tf`: Définit les valeurs affichées après le déploiement (ex: IP publique de l'instance).
 
 ## Instructions d'utilisation
 
@@ -39,13 +40,13 @@ Assurez-vous d'avoir configuré vos informations d'identification AWS avant d'ex
 4. Vérifiez les modifications à appliquer :
 
     ```bash
-    terraform plan -var-file="variables.tfvar"
+    terraform plan -var-file="variables.tfvars"
     ```
 
 5. Appliquez les modifications :
 
     ```bash
-    terraform apply -var-file="variables.tfvar"
+    terraform apply -var-file="variables.tfvars"
     ```
 
     Répondez "yes" quand vous êtes prêt à déployer.
@@ -55,14 +56,12 @@ Assurez-vous d'avoir configuré vos informations d'identification AWS avant d'ex
 7. Pour supprimer l'infrastructure
 
     ```bash
-    terraform destroy -var-file="variables.tfvar"
+    terraform destroy -var-file="variables.tfvars"
     ```
 
 ## Variables
 ```hcl
 provider_region      = "region_de_deploiement"
-secret_access_key    = "clé_d'accès"
-secret_key           = "clé_secrète"
 server_instance_type = "type_d_instance"
 ami_instance_type    = "numéro_ami"
 server_tag_name      = "nom_serveur"

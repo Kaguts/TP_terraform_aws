@@ -61,6 +61,6 @@ resource "aws_security_group" "my_security_group" {
 # Définition d'un sous-réseau
 resource "aws_subnet" "my_subnet" {
   vpc_id               = aws_vpc.my_vpc.id     # Association avec la VPC principale
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = "10.0.1.0/24"
   availability_zone    = "eu-west-3a"           # Zone de disponibilité pour le sous-réseau
 }

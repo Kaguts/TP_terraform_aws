@@ -2,12 +2,6 @@
 variable "provider_region" {
   type = string
 }
-variable "secret_access_key" {
-  type = string
-}
-variable "secret_key" {
-  type = string
-}
 variable "server_instance_type" {
   type = string
 }
