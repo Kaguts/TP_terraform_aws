@@ -1,0 +1,20 @@
+# Copie ce fichier en "terraform.tfvars" et adapte les valeurs.
+# terraform.tfvars est chargé automatiquement et ignoré par git.
+
+# Ton adresse IP publique, seule autorisée en SSH (récupérable avec : curl ifconfig.me)
+my_ip_cidr = "1.2.3.4/32"
+
+# Surcharges optionnelles (valeurs par défaut dans variables.tf) :
+# Declaration de la region
+# provider_region      = "eu-west-3"
+# Declaration du type d'instance
+# server_instance_type = "t3.micro"
+# AMI a utiliser (ID dependant de la region, ex: ami-xxxxxxxx).
+# Vide ou absent : derniere Amazon Linux 2023 de la region.
+# ami_instance_type    = ""
+# Nom du serveur
+# server_tag_name      = "tp-terraform"
+# Nom du groupe de securite
+# security_group_name  = "tp-terraform-ssh"
+# Chemin de la clé publique ssh pour l'instance ec2
+# ssh_public_key_path  = "~/.ssh/id_ed25519.pub"

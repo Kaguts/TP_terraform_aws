@@ -1,17 +1,26 @@
 # Le provider va permettre d'intéragir avec une API d'un fournisseur comme AWS
 terraform {
-    required_version = ">= 1.5"
+  required_version = ">= 1.5"
 
-    required_providers {
-        aws = {
-            source  = "hashicorp/aws"
-            version = "~> 5.0"
-        }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
+  }
 }
 
 # Configuration pour pouvoir communiquer avec le provider AWS
 # Les credentials sont lus depuis la configuration AWS CLI (~/.aws/credentials, variables d'environnement, etc.)
 provider "aws" {
-    region = "${var.provider_region}"
+  region = var.provider_region
+
+  # Étiquettes posées sur toutes les ressources : pratique pour retrouver
+  # (et supprimer) ce qui appartient au TP dans la console.
+  default_tags {
+    tags = {
+      Projet = "TP_terraform_aws"
+      Gere   = "terraform"
+    }
+  }
 }

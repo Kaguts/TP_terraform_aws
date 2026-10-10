@@ -1,7 +1,11 @@
 # Terraform
+# (.terraform.lock.hcl, lui, se versionne : il fige les versions des providers)
 .terraform/
-.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
+*.tfplan
 crash.log
 crash.*.log
+
+# Valeurs locales (ton adresse IP, tes chemins) : copier terraform.tfvars.example
+*.tfvars
